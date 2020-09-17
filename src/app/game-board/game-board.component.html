@@ -2,20 +2,21 @@
 <div *ngIf="gameboard">
   <h3>Opponent's hand</h3>
   <span *ngFor="let card of gameboard.player2.hand">
-    [x]
+    <img class="card-img" src="../../assets/cards/purple_back.jpg" alt="">
   </span>
   <hr>
   <h3>Opponent's matches</h3>
   <span *ngFor="let matches of gameboard.player2.matches">
     |
     <span *ngFor="let card of matches">
-      [{{card.rank}} {{card.suit}}]
+      <img class="card-img" src="../../assets/cards/{{card.rank}}{{card.suit}}.jpg" alt="">
     </span>
     |
   </span>
   <hr>
   <div>
     <h3>Deck</h3>
+    <img class="card-img" src="../../assets/cards/purple_back.jpg" alt="">
     {{gameboard.deck.length}} cards</div>
   <hr>
   <h3>Your matches</h3>
@@ -29,7 +30,7 @@
   <hr>
   <h3>Your hand</h3>
   <span *ngFor="let card of gameboard.player1.hand" (click)="requestCardTest(card.rank, 'player2')">
-    [{{card.rank}} {{card.suit}}]
+    <img class="card-img" src="../../assets/cards/{{card.rank}}{{card.suit}}.jpg" alt="">
   </span>
   <button (click)="drawCardTest()">draw card</button>
 </div>
